@@ -44,7 +44,7 @@ pipeline {
             }
             steps {
                 input 'Does the staging environment look OK?'
-                milestone(1) #prevent from accidentally deploying an older version of the code over a new version of the code
+                milestone(1) //prevent from accidentally deploying an older version of the code over a new version of the code
                 withCredentials([usernamePassword(credentialsId: 'webserver_login', usernameVariable: 'USERNAME', passwordVariable: 'USERPASS')]) {
                     sshPublisher(
                         failOnError: true,
